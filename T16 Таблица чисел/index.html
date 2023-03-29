@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+    <table id="tableF"></table>
+</body>
+<script>
+    let row = 6;
+    let column = 4;
+    let number = 1;
+    let table = '';
+    let td = '';
+    for (i = 1; i <= row; i++) {
+        for(x = 1; x <= column; x++){
+             td += `<td style="border: 1px solid; text-align: center;">${number++}</td>`
+        }
+        let tr = `<tr style="width:20px; height: 20px;  color: green;">${td}</tr>`
+        table += tr;
+        td = '';
+    }
+    document.getElementById("tableF").innerHTML = table;
+</script>
+
+</html>

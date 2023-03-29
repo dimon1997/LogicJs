@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+<style>
+    .circle{
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        border-radius: 50%;
+        border: 2px solid rgb(212, 207, 207);
+        margin-right: 5px;
+        display: inline-block;
+    }
+    .red{
+        background-color: red;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .green{
+        background-color: green;
+    }
+</style>
+<body>
+
+</body>
+<!-- <script>
+    let classColor;
+    function twister() {
+        let i = 0;
+        do{
+            let circle = document.createElement('span');
+            if(classColor == `circle red`){
+                circle.className = `circle yellow`;
+                classColor = `circle yellow`;
+            } else if(classColor == `circle yellow`){
+                circle.className = `circle green`;
+                classColor = `circle green`;
+            } else{
+                circle.className = `circle red`;
+                classColor = `circle red`
+            }
+            document.body.append(circle);
+            i++;
+        } while (i < 15)
+    }
+    twister()
+</script> -->
+<script>
+    let classColor;
+    function twister() {
+            let circle = document.createElement('span');
+            if(classColor == `circle red`){
+                circle.className = `circle yellow`;
+                classColor = `circle yellow`;
+            } else if(classColor == `circle yellow`){
+                circle.className = `circle green`;
+                classColor = `circle green`;
+            } else{
+                circle.className = `circle red`;
+                classColor = `circle red`
+            }
+            document.body.append(circle);
+    }
+
+    for(i=0;i<15;){
+        twister()
+        setTimeout(i++, 1800);
+    }
+    //setInterval(twister, 500);
+
+    //twister()
+
+
+</script>
+
+</html>
+

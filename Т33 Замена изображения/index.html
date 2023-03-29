@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+<style>
+    .card {
+        width: 80px;
+    }
+</style>
+
+<body>
+    <div>
+        <div id='car'></div>
+        <div id='flover'></div>
+
+    </div>
+</body>
+<script>
+    let cars = '';
+    for (let i = 1; i < 9; i++) {
+        cars += `<img src='imageCar/car${i}.jpg' class='card' id='${i}' onclick='changePhoto(this.id)'></img>`;
+    }
+    document.getElementById('car').innerHTML = cars;
+
+    function changePhoto(id){
+       document.getElementById(`${id}`).setAttribute('src', `imageFlower/flower${id}.png`);
+    }
+</script>
+
+</html>

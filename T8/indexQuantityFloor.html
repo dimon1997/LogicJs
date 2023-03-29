@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+    
+</body>
+<!-- <script>
+    // let today = new Date();
+    // let year = today.getFullYear();
+    // console.log(year);
+    let floor = Number(prompt('Введите этаж', ''));
+    let price1 = 20;
+    let price2 = 30;
+    let price3 = 40;
+    let res = 0;
+    let deliveryPrice = 0;
+        if (floor == 1) {
+            console.log("Бесплатно");
+        } else if( floor < 5){
+           res = (floor - 1) * price1;
+           console.log("Заносим на " + floor + " этаж за " + res + " грн");
+        } else if(floor < 8){
+            let thisRes = floor - 4;
+            res = ((3 * price1) + (thisRes * price2));
+            console.log("Заносим на " + floor + " этаж за " + res + " грн");
+        } else {
+            let previousRes = 150;
+            let thisRes3 = (floor - 7) * price3
+            res = previousRes + thisRes3;
+            console.log("Заносим на " + floor + " этаж за " + res + " грн");
+        }
+</script> -->
+<script>
+    let floor = Number(prompt('Введите этаж', ''));
+    let result = 0;
+    let price = 0;
+    for(i = 2; i<=floor; i++){
+         if( i < 5){
+            price = 20;
+            result += price;
+        } else if(i < 8){
+            price = 30;
+            result += price; 
+        } else {
+            price = 40;
+            result += price;
+        }    
+    }
+    console.log("Заносим на " + floor + " этаж за " + result + " грн");
+</script>
+</html>
+
+
+<!-- //quantity.push([i]);
+        // if(quantity.length <= 1){
+        //     result = 0;
+        // } else if(quantity.length < 5){
+        //     price = 20;
+        //     result += price; 
+        // }  else if(quantity.length < 8){
+        //     price = 30;
+        //     result += price; 
+        // } else{
+        //     price = 40;
+        //     result += price;
+        // } -->

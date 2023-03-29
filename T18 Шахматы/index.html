@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+    <table id="tableF"   style=" border-spacing: 0px;" ></table>
+</body>
+<script>
+    let row = 8;
+    let column = 8;
+    let number = 1;
+    let table = '';
+    let td = '';
+    for (i = 1; i <= row; i++) {
+        for (x = 1; x <= column; x++) {
+            if (i % 2) {
+                if (number % 2) {
+                    td += `<td style=" text-align: center; width: 50px; background-color: white;">${number++}</td>`
+                } else {
+                    td += `<td style=" text-align: center; width: 50px; background-color: black; color: white;">${number++}</td>`
+                }
+            } else {
+                if (number % 2) {
+                    td += `<td style=" text-align: center; width: 50px; background-color: black; color: white">${number++}</td>`
+                } else {
+                    td += `<td style=" text-align: center; width: 50px; background-color: white;">${number++}</td>`
+                }
+            }
+
+
+        }
+        let tr = `<tr style="width: 50px; height: 50px;  ">${td}</tr>`
+        table += tr;
+        td = '';
+
+
+
+    }
+    document.getElementById("tableF").innerHTML = table;
+</script>
+
+
+</html>

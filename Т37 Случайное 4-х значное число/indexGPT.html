@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Number</title>
+        <style>
+            .digit {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                background: lightgray;
+                border-radius: 5px;
+                font-size: 30px;
+                text-align: center;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            .red {
+                background: red;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="card"></div>
+        <script>
+            let arrElement = '';
+
+            function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+            }
+
+            let randomNumber = (getRandomIntInclusive(1000, 9999));
+            console.log(randomNumber);
+
+            let arrNumber = ('' + randomNumber).split('').map(Number);
+            console.log(arrNumber);
+
+            for (let i = 0; i < arrNumber.length; i++) {
+                arrElement += `
+                    <div id='${i}' class='digit' data-digit='${arrNumber[i]}' onclick='auditNumber(this.id)'></div>
+                `
+            }
+            document.getElementById('card').innerHTML = arrElement;
+
+            function auditNumber(id) {
+    let thisCard = document.getElementById(`${id}`);
+    let data = thisCard.dataset.digit;
+    if (thisCard.innerText === "") {
+        let textInCard = 1;
+        if (textInCard === data) {
+            thisCard.innerText = data;
+            thisCard.classList.toggle('red');
+            thisCard.removeAttribute('onclick');
+            thisCard.style.cursor = "not-allowed";
+        }
+    } else if (thisCard.innerText >= 9) {
+        thisCard.innerText = data;
+        thisCard.classList.toggle('red');
+        thisCard.removeAttribute('onclick');
+        thisCard.style.cursor = "not-allowed";
+    } else if (thisCard.innerText !== data) {
+        thisCard.innerText++;
+    } else {
+        thisCard.innerText = data;
+        thisCard.classList.toggle('red');
+        thisCard.removeAttribute('onclick');
+        thisCard.style.cursor = "not-allowed";
+    }
+}
+
+        </script>
+    </body>
+</html>

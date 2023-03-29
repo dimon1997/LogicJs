@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+    
+</body>
+<script>
+    let questionArr = [
+        "Про волшебство должно быть?",
+        "Надо, чтобы было смешно?",
+        "Детективная история нужна?",
+        "Бояться будете?"]
+    let bookArr = [
+        { bookName: "Л.Н. Толстой. Война и мир.", q0: false, q1: false, q2: false, q3: false },
+        { bookName: "Джоан Роулинг.Гарри Поттер.", q0: true, q1: false, q2: false, q3: false },
+        { bookName: "Братья Стругацкие. Понедельник начинается в субботу.", q0: true, q1: true, q2: false, q3: false },
+        { bookName: "Агата Кристи. Вечеринка в Хэллоуин.", q0: true, q1: true, q2: true, q3: false },
+        { bookName: "Джонатан Страуд. Кричащая лестница.	", q0: true, q1: true, q2: true, q3: true },
+        { bookName: "Диана Маш. Заноза для драконьего военачальника", q0: true, q1: false, q2: true, q3: false },
+        { bookName: "Кирилл Круганский. Смешно или страшно.", q0: false, q1: true, q2: false, q3: true },
+        { bookName: "Стивен Кинг. Мизери.", q0: false, q1: false, q2: false, q3: true },
+        { bookName: "Эдгар По. Очень страшные истории.", q0: false, q1: false, q2: true, q3: true },
+        { bookName: "А. Маринина. Безупречная репутация", q0: false, q1: false, q2: true, q3: false }
+    ]
+    let resultQuestionArr = [];
+
+    for (i = 0; i < questionArr.length; i++) {
+        let question = questionArr[i];
+        if (confirm(question)) {
+            obj = { q: true }
+        } else {
+            obj = { q: false }
+        }
+        resultQuestionArr.push(obj)
+    }
+    for (i = 0; i < bookArr.length; i++) {
+        let book = bookArr[i];
+        if (book.q0 == resultQuestionArr[0].q && book.q1 == resultQuestionArr[1].q && book.q2 == resultQuestionArr[2].q && book.q3 == resultQuestionArr[3].q) {
+            console.log(book.bookName);
+        }
+    }
+
+</script>
+</html>

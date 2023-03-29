@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+    
+</body>
+<script>
+    window.onload = spliceMetod();
+    function spliceMetod() {
+        const poem = ["Мороз", "и", "солнце", "день", "чудесный"];
+        let delNumber =Number(prompt(`Мороз и солнце день чудесный \n\nВведите номер слова которое хотите заменить от 1 до ${poem.length}`, "")) - 1;
+        console.log(delNumber);
+        if (delNumber < 1) {
+            alert("Число не может быть менше 1")
+            spliceMetod();
+        } else if (delNumber > poem.length) {
+            alert(`Число больше количества слов в предложении: ${poem.length}`)
+            spliceMetod();
+        } else {
+            let changeWord = prompt("Введите новое слово", "");
+            let cutWord = poem.splice(delNumber, 1, changeWord);
+            poem.join(cutWord, delNumber);
+            alert(poem);
+        }
+    }
+
+
+
+</script>
+</html>

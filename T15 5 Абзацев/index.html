@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+
+</body>
+<script>
+    let size = 100;
+   for(i = 1; i <= 5; i++ ){
+    size += 100
+    let p = document.createElement("p")
+    p.style.width = `${size}px`;
+    p.style.height = "40px"
+    p.style.backgroundColor = "lightgreen";
+    p.style.border = "dotted"
+    p.style.textAlign = "center"
+    p.style.margin = "10px auto"
+    p.style.padding = "15px 0 0 0"
+    p.innerText = `Абзац  ${i}`
+    document.body.append(p);
+   }
+</script>
+</html>

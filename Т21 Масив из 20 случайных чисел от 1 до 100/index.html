@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+
+</body>
+<!-- <script>
+    let arrNumber = [];
+    let even = '';
+    let shareIntoThree = '';
+    let shareIntoFive = '';
+    let shareIntoTen = '';
+    for(let i = 0; i < 20; i++){
+        let randomNumber = Math.floor(Math.random() * 100);
+        arrNumber.push(randomNumber);
+        if(randomNumber % 2 == 0){
+            even += randomNumber + ', ';
+        } else if(randomNumber % 3 == 0){
+            shareIntoThree += randomNumber + ', ';
+        } else if(randomNumber % 5 == 0){
+            shareIntoFive += randomNumber + ', ';
+        } else if(randomNumber % 10 == 0){
+            shareIntoTen += randomNumber + ', ';
+        }
+    }
+    console.log(arrNumber);
+    console.log('все четные числа этого массива: ' + even);
+    console.log('все числа, которые делятся на 3: ' + shareIntoThree);
+    console.log('все числа, которые делятся на 5: ' + shareIntoFive)
+    console.log('все числа, которые делятся на 10:' + shareIntoTen)
+</script> -->
+<!-- <script>
+    let arrNumber = [];
+    let shareInto = [2, 3, 5, 10]
+    let arrMessage = [
+        'все четные числа этого массива: ',
+        'все числа, которые делятся на 3: ',
+        'все числа, которые делятся на 5: ',
+        'все числа, которые делятся на 10: '
+    ]
+    let arrFilterNumber = [];
+
+    for (let i = 0; i < 20; i++) {
+        arrNumber.push(Math.floor(Math.random() * 100));
+    }
+    console.log(arrNumber);
+    let idxMessage = 0;
+    for (let s = 0; s < shareInto.length; s++) {
+            arrFilterNumber = [];
+            for (let i = 0; i < arrNumber.length; i++) {
+                if (arrNumber[i] % shareInto[s] == 0 && arrNumber !== 0) {
+                    arrFilterNumber.push (arrNumber[i]);
+                }
+            }
+        console.log(arrMessage[idxMessage] + arrFilterNumber);
+        idxMessage ++;
+        }
+</script> -->
+<script>
+    let arrNumber = [];
+    for (let i = 0; i < 20; i++) {
+        arrNumber.push(Math.floor(Math.random() * 100));
+    }
+    console.log(arrNumber);
+
+    let intoTwo = arrNumber.filter(e => e % 2 == 0);
+    let intoThree = arrNumber.filter(e => e % 3 == 0);
+    let intoFive = arrNumber.filter(e => e % 5 == 0);
+    let intoTen = arrNumber.filter(e => e % 10 == 0);
+    console.log('все четные числа этого массива: ' + intoTwo + '\n' +
+        'все числа, которые делятся на 3: ' + intoThree + '\n' +
+        'все числа, которые делятся на 5: ' + intoFive + '\n' +
+        'все числа, которые делятся на 10: ' + intoTen)
+</script>
+
+</html>

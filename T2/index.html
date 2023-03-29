@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+<body>
+    <div>
+        <input id="thisValue" type="number">
+        <button onclick=clickBtn()>ok</button>
+    </div> 
+</body>
+<script>
+    function clickBtn() {
+        var a = Number(document.getElementById("thisValue").value);
+        var res;
+        res = a + (a * 0.15);
+        alert("Премия 15%. На руки " + res);
+        res -= (res * 0.1);
+        alert("Налоги -10%. На руки " + res);
+        res -= 190;
+        alert("В магазине -190. Осталось " + res);
+        res /= 2;
+        alert("Жене половину отдал. Осталось " + res);  
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+<body>
+  <button onclick="printPhoto()">print</button>
+</body>
+<script>
+  let x = 0;
+  let y = 0;
+  let clickQ = 0;
+function printPhoto(x,y){
+  let size = 600 - (clickQ * 50);
+  let img = document.createElement('img')
+  img.setAttribute('src', 'https://images.unsplash.com/photo-1553111650-9caa619925d3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3NTU4Mjk2OA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600');
+  img.style.width = `${size}px`;
+  img.style.height = `${size}px`;
+  img.style.position = "absolute";
+  document.body.append(img);
+  clickQ++
+  console.log(clickQ);
+}
+</script>
+</html>
+

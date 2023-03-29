@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+<body>
+</body>
+<script>
+   function randomInteger(min, max) {
+  // получить случайное число от (min-0.5) до (max+0.5)
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+let a = randomInteger(-5, 5);
+let cash = prompt('Введите суму ставки', '');
+if(a > 0){
+    console.log('выиграл: ' + a * cash + '\n' + 'число: ' + a)
+
+} else{
+    console.log('не угадал' + '\n' + 'число: ' + a);
+}
+</script>
+</html>
+

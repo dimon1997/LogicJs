@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./index.js"></script> -->
+</head>
+<style>
+    /* Modal */
+    .modal {
+        background-color: rgb(238, 242, 245);
+        width: 70%;
+        height: 100%;
+        margin-left: 125px;
+        z-index: 7;
+    }
+
+    .modal img {
+        position: relative;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+    }
+    .modalHeader{
+        background-color: rgb(178, 183, 187);
+        height: 40px;
+    }
+    .modalclose{
+        margin-top: 5px;
+        margin-right: 5px;
+        float: right;
+    }
+    /* Modal */
+    .car {
+        width: 80px;
+    }
+</style>
+
+<body>
+    <div>
+        <div id='car'></div>
+        <div id='flover'></div>
+
+    </div>
+
+</body>
+<script>
+    let cars = '';
+    for (let i = 1; i < 9; i++) {
+        cars += `<img src='image/car${i}.jpg' class='car' id='${i}'' onclick='openPhoto(this.id)''></img>`;
+    }
+    document.getElementById('car').innerHTML = cars;
+
+    function openPhoto(id) {
+        document.getElementById('car').innerHTML = cars;
+        let thisCar = `<div id='modal${id}' class='modal'>
+            <div class='modalHeader'>
+                <button id='${id}' onclick='closeModal(this.id)' class='modalclose'>X</button>
+            </div>
+            <div class='modalContent'>
+                <img src='image/car${id}.jpg'></img>  
+            </div>
+        </div>`;
+        document.getElementById('car').innerHTML += thisCar;
+    }
+    function closeModal(id) {
+        document.getElementById(`modal${id}`).remove();
+    }
+</script>
+
+</html>
